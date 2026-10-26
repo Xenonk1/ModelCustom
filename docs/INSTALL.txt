@@ -1,0 +1,36 @@
+ModelCustom - FiveM custom player models
+
+INSTALL
+1. Close FiveM.
+2. Extract this archive into %LOCALAPPDATA%\FiveM\FiveM.app.
+3. Add your model folders to FiveM.app\plugins\models.
+4. Start FiveM, press F4 and select a model.
+
+CONTROLS
+F4  Open or close the menu
+F5  Toggle the selected model
+F7  Reload model settings from ModelCustom.ini
+
+MODELS
+Each add-on ped needs its original peds.meta and matching .yft, .ydd, .ytd
+and .ymt files. Add model.txt containing the model's actual internal name.
+See plugins\models\README.md for the folder layout. Models are supplied
+separately. Restart FiveM after changing model assets.
+
+FRIENDS
+To see each other's custom models, join the same FiveM server, install
+identical model packs and configure the same relay_url in ModelCustom.ini.
+Restart FiveM after changing the relay URL. The source repository includes
+the optional Cloudflare relay and its deployment instructions.
+Replace YOUR_ENDPOINT with your relay's HTTPS URL.
+With relay_url empty or left as YOUR_ENDPOINT, the plugin works locally.
+
+UPDATING
+Keep your current ModelCustom.ini and model folders when replacing the ASI.
+The default INI starts with no selected model and a YOUR_ENDPOINT placeholder.
+
+DIAGNOSTICS
+ModelCustom.log is written beside ModelCustom.asi. FiveM and server settings
+must permit ASI plugins. Validate the plugin in FiveM before redistribution.
+
+The archive includes Dear ImGui's license in the plugins directory.

@@ -1,0 +1,46 @@
+name: Build and test
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  plugin:
+    name: Windows plugin
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Build, test and package
+        shell: powershell
+        run: |
+          .\test.ps1
+          .\package.ps1 -Version 1.0.0
+      - uses: actions/upload-artifact@v7.0.2
+        with:
+          name: ModelCustom-win64
+          path: |
+            dist/ModelCustom-*.zip
+            dist/ModelCustom-*.zip.sha256
+          if-no-files-found: error
+
+  relay:
+    name: Relay
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: relay
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: relay/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run dry-run
