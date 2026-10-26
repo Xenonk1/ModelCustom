@@ -29,6 +29,9 @@ through GitHub Releases or CI artifacts.
 3. Put your model folders in `FiveM.app\plugins\models`.
 4. Start FiveM, press **F4**, and select a model.
 
+The ZIP from GitHub Releases includes a configured community relay for peer
+discovery. Source builds and CI artifacts use `YOUR_ENDPOINT` until configured.
+
 The installed layout is:
 
 ```text
@@ -82,9 +85,12 @@ pack. Otherwise, that player keeps their regular appearance.
 
 To use this with friends:
 
-1. Deploy the [included relay](relay/README.md).
-2. Set the same `relay_url` in every client's INI and restart FiveM.
+1. Install the ZIP from [Releases](https://github.com/Xenonk1/ModelCustom/releases/latest), which includes a shared relay configuration.
+2. Keep the bundled `relay_url` on each client and restart FiveM.
 3. Join the same server and install identical copies of the models you want to see.
+
+For source builds or your own service, deploy the [included relay](relay/README.md)
+and set its HTTPS URL in each client's INI.
 
 The relay sends presence metadata over WebSocket. It does not distribute model
 files or proxy FiveM traffic. Players without the plugin see the standard model.
@@ -92,7 +98,8 @@ With `relay_url` empty or left as `YOUR_ENDPOINT`, the plugin works locally.
 
 ## Configuration
 
-Edit `plugins\ModelCustom.ini`, or change model settings in the menu:
+Edit `plugins\ModelCustom.ini`, or change model settings in the menu. The source
+configuration below uses a placeholder; the release ZIP includes a relay URL:
 
 ```ini
 models_dir=models
