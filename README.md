@@ -21,7 +21,6 @@ through GitHub Releases or CI artifacts.
 
 ![ModelCustom in FiveM: Deadpool, Shrek and Goku together in-game](docs/images/in-game-preview.png)
 
-Screenshot provided by the author. Character models shown here are supplied separately.
 
 ## Install
 
