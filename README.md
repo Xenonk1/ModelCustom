@@ -17,6 +17,12 @@ and have the same model packs installed. No FiveM server resource is required.
 This repository contains source code. Build outputs are distributed separately
 through GitHub Releases or CI artifacts.
 
+## In-game preview
+
+![ModelCustom in FiveM: Deadpool, Shrek and Goku together in-game](docs/images/in-game-preview.png)
+
+Screenshot provided by the author. Character models shown here are supplied separately.
+
 ## Install
 
 1. Download `ModelCustom-v1.0.0-win64.zip` from [Releases](https://github.com/Xenonk1/ModelCustom/releases/latest), or [build it yourself](#build).
